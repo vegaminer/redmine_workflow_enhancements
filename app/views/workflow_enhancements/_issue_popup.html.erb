@@ -5,8 +5,7 @@
 
   <script type="text/javascript">
   $(function() {
-    $('<div style="float: right;"><span id="workflow-help" class="icon icon-help" style="margin-left:4px;cursor:pointer;"></span></div>')
-      .insertAfter('#issue_status_id');
+    $('label[for="issue_status_id"]').prepend('<a href="#" id="workflow-help" class="icon icon-help"><img src="/images/help.png" alt="Workflow"></a>');
 
     $('#workflow-help').click(function() {
       $.ajax({
