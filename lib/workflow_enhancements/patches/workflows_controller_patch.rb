@@ -6,7 +6,9 @@ module WorkflowEnhancements
         base.send(:include, InstanceMethods)
         base.class_eval do
           unloadable
-          alias_method_chain :find_statuses , :workflow_enhancements
+          #alias_method_chain :find_statuses , :workflow_enhancements
+          alias_method :find_statuses_without_workflow_enhancements, :find_statuses
+          alias_method :find_statuses, :find_statuses_with_workflow_enhancements
         end
       end
 
